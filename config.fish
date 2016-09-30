@@ -80,9 +80,6 @@ function fish_prompt -d "Write out the prompt"
 	printf '%s> ' (set_color normal)
 end
 
-
-bind \cr "rake"
-
 function ss -d "Run the script/server"
 	script/server
 end
@@ -130,3 +127,5 @@ else
 end  
 
 
+status --is-interactive; and . (rbenv init -|psub)
+status --is-interactive; and eval (docker-machine env --shell fish default)
